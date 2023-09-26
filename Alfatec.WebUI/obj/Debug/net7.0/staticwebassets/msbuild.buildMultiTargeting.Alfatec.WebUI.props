@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Alfatec.WebUI.props" />
+</Project>
