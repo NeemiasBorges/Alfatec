@@ -10,26 +10,20 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.IdProduto)
+            builder.Property(c => c.UsuarioQueComentou)
                 .IsRequired();
 
-            builder.Property(c => c.IdUsuario)
+            builder.Property(c => c.DataComentario)
                 .IsRequired();
 
-            builder.Property(c => c.Data)
-                .IsRequired();
-
-            builder.Property(c => c.TextoComentario)
-                .IsRequired();
+            builder.Property(c => c.ComentarioTexto)
+                .IsRequired()
+                .HasMaxLength(25600);
 
             builder.Property(c => c.TipoObjeto)
-                .HasDefaultValue(5) // Valor padrão é 5
+                .HasDefaultValue(6) 
                 .IsRequired();
-
-            builder.HasOne(c => c.Produto)
-                 .WithMany(p => p.Comentarios)  // Produto tem muitos Comentarios
-                 .HasForeignKey(c => c.IdProduto)
-                 .IsRequired();
         }
+
     }
 }

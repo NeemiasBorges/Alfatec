@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Adicionar Produto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<Alfatec.Application.DTOs.SeloDTO> selos = (List<Alfatec.Application.DTOs.SeloDTO>)TempData["selos"];
+    List<Alfatec.Application.DTOs.CategoriaDTO> categorias = (List<Alfatec.Application.DTOs.CategoriaDTO>)TempData["categorias"];
+}
+
+<h1>Adicionar Produto</h1>
+
+<hr />
+
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label class="control-label">Nome do Produto</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Foto do Produto</label>
+                <input type="file" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Peso Minimo de Compra</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Observações</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Categoria</label>
+                <select class="form-control">
+                    @foreach (var item in categorias)
+                    {
+                        <option id="@item.Id">@item.NomeCategoria</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Selo</label>
+                <select class="form-control">
+                    @foreach (var item in selos)
+                    {
+                        <option id="@item.Id">@item.NomeSelo</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group row col-12 mt-2">
+                <input type="submit" value="Criar Produto" class="btn btn-primary text-white btn-block" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -14,7 +14,7 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
             builder.Property(m => m.Id)
                 .IsRequired();
 
-            builder.Property(m => m.Nome)
+            builder.Property(m => m.NomeArquivo)
                 .IsRequired()
                 .HasMaxLength(50);
 
@@ -25,14 +25,7 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
                 .IsRequired();
 
             builder.Property(m => m.TipoObjeto)
-                .HasDefaultValue(10) // Valor padrão é 10
-                .IsRequired();
-
-            builder.Property(m => m.idUsuario)
-                .IsRequired();
-
-            builder.HasOne(m => m.Usuario)
-                .WithOne(u => u.MidiaUsuario)
+                .HasDefaultValue(10) 
                 .IsRequired();
 
         }

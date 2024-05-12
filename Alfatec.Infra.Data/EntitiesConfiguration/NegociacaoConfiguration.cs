@@ -10,34 +10,13 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(n => n.Id);
 
-            builder.Property(n => n.Id)
+            builder.Property(n => n.DataNegociacao)
                 .IsRequired();
 
-            builder.Property(n => n.Data)
+            builder.Property(n => n.IdEmpresaVendedora)
                 .IsRequired();
 
-            builder.Property(n => n.IDEmpresaVendedora)
-                .IsRequired();
-
-            builder.HasOne(n => n.EmpresaVendedora)
-                .WithMany()
-                .HasForeignKey(n => n.IDEmpresaVendedora)
-                .IsRequired();
-
-            builder.Property(n => n.IDEmpresaCompradora)
-                .IsRequired();
-
-            builder.HasOne(n => n.EmpresaCompradora)
-                .WithMany()
-                .HasForeignKey(n => n.IDEmpresaCompradora)
-                .IsRequired();
-
-            builder.Property(n => n.IDproduto)
-                .IsRequired();
-
-            builder.HasOne(n => n.Produto)
-                .WithMany()
-                .HasForeignKey(n => n.IDproduto)
+            builder.Property(n => n.IdEmpresaCompradora)
                 .IsRequired();
 
             builder.Property(n => n.MetodoEnvio)
@@ -53,8 +32,9 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
                 .IsRequired();
 
             builder.Property(n => n.TipoObjeto)
-                .HasDefaultValue(11) // Valor padrão é 11
+                .HasDefaultValue(11) 
                 .IsRequired();
         }
+
     }
 }

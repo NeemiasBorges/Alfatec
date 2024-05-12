@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj": {}
+    "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\Alfatec.Application.csproj": {
+    "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\Alfatec.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\Alfatec.Application.csproj",
+        "projectUniqueName": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\Alfatec.Application.csproj",
         "projectName": "Alfatec.Application",
-        "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\Alfatec.Application.csproj",
-        "packagesPath": "C:\\Users\\Neemias2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\obj\\",
+        "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\Alfatec.Application.csproj",
+        "packagesPath": "C:\\Users\\ifspn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Neemias2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ifspn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj": {
-                "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj"
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj"
+              },
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj"
               }
             }
           }
@@ -43,11 +45,22 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,29 +72,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj": {
+    "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj",
         "projectName": "Alfatec.Domain",
-        "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj",
-        "packagesPath": "C:\\Users\\Neemias2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\obj\\",
+        "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj",
+        "packagesPath": "C:\\Users\\ifspn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Neemias2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ifspn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,7 +117,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,6 +129,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -119,29 +150,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj": {
+    "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj",
         "projectName": "Alfatec.Infra.Data",
-        "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\Neemias2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\obj\\",
+        "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\ifspn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Neemias2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ifspn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -150,15 +195,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj": {
-                "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj"
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj"
               }
             }
           }
@@ -167,6 +211,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -201,29 +250,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj": {
+    "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj",
+        "projectUniqueName": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj",
         "projectName": "Alfatec.Infra.IoC",
-        "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj",
-        "packagesPath": "C:\\Users\\Neemias2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.IoC\\obj\\",
+        "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.IoC\\Alfatec.Infra.IoC.csproj",
+        "packagesPath": "C:\\Users\\ifspn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Neemias2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ifspn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -232,21 +295,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\Alfatec.Application.csproj": {
-                "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Application\\Alfatec.Application.csproj"
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\Alfatec.Application.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Application\\Alfatec.Application.csproj"
               },
-              "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj": {
-                "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj"
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj"
               },
-              "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj"
+              "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Infra.Data\\Alfatec.Infra.Data.csproj"
               }
             }
           }
@@ -255,11 +317,26 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -271,12 +348,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.18, 7.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

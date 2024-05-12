@@ -2,6 +2,9 @@
 {
     public class ModoEnvio
     {
+        public ModoEnvio()
+        {
+        }
         public ModoEnvio(int id, string nomeTransportadora, string cNPJTransportadora, string iETransportadora, string calculoPrevisaoEntrega, string tipoEnvio)
         {
             Id = id;

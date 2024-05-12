@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "P6nX87l/s/HvZuGmvjRQYD0KSNrSlDd71UNybygpGlbaZwqVgNhJU4ueErWLEQZlNUYmHuq+vQE4COgqCm6x6Q==",
+  "dgSpecHash": "xGn/1PtTvxUddZrf/wn2h6PYjr7j2xD1W5eYwGr3NuTsQiLDWfpMDnsQXAZwwRnQOY5TgqUlWEx89vGX/1Qnkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\ALFATEC\\Solution1\\Alfatec.Domain\\Alfatec.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ifspn\\OneDrive\\Desktop\\ALFATEC\\REPOSITORY\\Alfatec\\Alfatec.Domain\\Alfatec.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ifspn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ifspn\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ifspn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
+  ],
   "logs": []
 }

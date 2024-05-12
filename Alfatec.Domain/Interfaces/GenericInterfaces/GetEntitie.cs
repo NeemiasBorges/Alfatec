@@ -2,7 +2,7 @@
 {
     public interface GetEntitie<IEntity>
     {
-        Task<ICollection<IEntity>> Get();
+        Task<List<IEntity>> Get();
         Task<IEntity> GetByID(int ID);
     }
 }

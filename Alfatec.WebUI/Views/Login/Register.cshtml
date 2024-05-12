@@ -1,0 +1,536 @@
+﻿@using Alfatec.Application.DTOs
+@{
+    string apiKey = (string)TempData["apiKey"];
+    List<CondicoesDTO> condicoesVia = (List<CondicoesDTO>)TempData["condicoes"];
+}
+
+<div class="mt-4 col-6 justify-content-center m-auto" style="padding-top:200px;">
+    <h1 class="mt-4"></h1>
+    @* <form class="mt-4" id="registerForm" action="~/Login/RegisterPost" method="post">  *@
+    <form class="mt-4" id="registerForm"> 
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="row g-4">
+
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="featurs-item text-center rounded bg-light p-4 card" onclick="selectCard(this)" data-tipo-usuario="MRC">
+                            <div class=" circle featurs-icon btn-square rounded-circle bg-primary mb-5 mx-auto" style="width:150px; height:150px;">
+                                <img class="white-img" src="~/img/registerPage/mercado.png" style="width:100%; height:100%;" alt="Ícone de Prestador" />
+                            </div>
+                            <div class="featurs-content">
+                                <h5>Distribuidor & Mercados</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="featurs-item text-center rounded bg-light p-4 card" onclick="selectCard(this)" data-tipo-usuario="PRS">
+                            <div class="circle featurs-icon btn-square rounded-circle bg-primary mb-5 mx-auto" style="width:150px; height:150px;">
+                                <img class="white-img" src="~/img/registerPage/prestador.png" style="width:100%; height:100%;" alt="Ícone de Prestador" />
+                            </div>
+                            <div class="featurs-content text-center">
+                                <h5>Prestador de Serviço</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="featurs-item text-center rounded bg-light p-4 card" onclick="selectCard(this)" data-tipo-usuario="AGR">
+                            <div class="circle featurs-icon btn-square rounded-circle bg-primary mb-5 mx-auto" style="width:150px; height:150px;">
+                                <img class="white-img" src="~/img/registerPage/produtor.png" style="width:100%; height:100%; " alt="Ícone de Produtor" />
+                            </div>
+                            <div class="featurs-content text-center">
+                                <h5>Produtor Rural</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-2">
+
+                    <input id="tipoUser" type="text" class="form-control d-none" name="Tipo" maxlength="3" />
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item w-100">
+                            <label class="form-label my-3">Primeiro Nome<sup>*</sup></label>
+                            <input type="text" class="form-control" name="Nome" maxlength="25"
+                                   data-val="true"
+                                   data-val-required="O nome é obrigatório"
+                                   data-val-length="O nome deve ter no máximo 25 caracteres"
+                                   data-val-length-max="25">
+                            <span class="text-danger" data-valmsg-for="Nome" data-valmsg-replace="ὐ"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item w-100">
+                            <label class="form-label my-3">Ultimo Nome<sup>*</sup></label>
+                            <input type="text" class="form-control" name="Sobrenome" maxlength="25"
+                                   data-val="true"
+                                   data-val-required="O sobrenome é obrigatório"
+                                   data-val-length="O sobrenome deve ter no máximo 25 caracteres"
+                                   data-val-length-max="25">
+                            <span class="text-danger" data-valmsg-for="Sobrenome" data-valmsg-replace="ὐ"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-item w-100">
+                            <label class="form-label my-3">Email<sup>*</sup></label>
+                            <input type="email" class="form-control" name="Email" maxlength="40">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-2 col-sm-12">
+                        <div class="form-item w-100">
+                            <label class="form-label my-3">DDD<sup>*</sup></label>
+                            <input type="text" class="form-control" name="ddd" maxlength="25">
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-sm-12">
+                        <div class="form-item w-100">
+                            <label class="form-label my-3">Telefone<sup>*</sup></label>
+                            <input type="text" class="form-control" name="telefone" maxlength="25">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkTel" checked>
+                    <label class="form-check-label" for="checkTel">
+                        Desejo ser contatado diretamente por esse telefone?
+                    </label>
+                </div>
+
+                <div class="form-item">
+
+                    <div class="form-item">
+                        <label class="form-label my-3">CNPJ<sup>*</sup></label>
+                        <input type="text" class="form-control" id="cnpj" name="CNPJ"
+                               data-val="true"
+                               data-val-required="O CNPJ é obrigatório"
+                               oninput="formatarCNPJ(this)"
+                               onpaste="formatarCNPJ(this)" autocomplete="off">
+                        <span class="text-danger" data-valmsg-for="CNPJ" data-valmsg-replace="ὐ"></span>
+                    </div>
+
+                    <span class="text-danger" data-valmsg-for="CNPJ" data-valmsg-replace="ὐ"></span>
+                    <button type="button" id="btnCNPJBef" class="btn btn-primary mt-2 text-white" onclick="buscarDadosEmpresa()">Buscar Dados</button>
+                    <button class="btn btn-primary mt-2 text-white d-none" id="btnCNPJAfter" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Carregando...
+                    </button>
+                </div>
+                <div class="form-item">
+                    <label class="form-label my-3">Nome Empresa<sup>*</sup></label>
+                    <input type="text" class="form-control" id="nomeEmpresa" name="NomeEmpresa" maxlength="50" disabled>
+                    <span class="text-danger" data-valmsg-for="NomeEmpresa" data-valmsg-replace="ὐ"></span>
+                </div>
+                <div class="form-item">
+                    <label class="form-label my-3">Area Atuacao</label>
+                    <input type="text" class="form-control" id="atividadePrincipal" name="AreaAtuacao" disabled>
+                    <span class="text-danger" data-valmsg-for="AreaAtuacao" data-valmsg-replace="ὐ"></span>
+                </div>
+
+
+                
+                
+                <div class="row">
+                    <div class="col-xl-4 com-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">CEP<sup>*</sup></label>
+                            <input type="text" class="form-control" id="cepInput" name="Endereco.CEP" maxlength="9" placeholder="Digite o CEP (ex: xxxxx-xxx)" autocomplete="off">
+                            <span class="error-message" id="cepError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 com-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">&nbsp;</label>
+                            <button type="button" id="searchAddressButton" class="btn btn-block btn-primary text-white d-inline" onclick="pesquisaByCEP()">Pesquise</button>
+                            <button type="button" id="searchAddressButtonAfter" class="btn btn-block btn-primary text-white d-none" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Logradouro<sup>*</sup></label>
+                            <input type="text" class="form-control" id="logradouroInput" name="Endereco.Rua" maxlength="25">
+                            <span class="error-message" id="logradouroError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Bairro<sup>*</sup></label>
+                            <input type="text" class="form-control" id="bairroInput" name="Endereco.Bairro" maxlength="25">
+                            <span class="error-message" id="bairroError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Cidade<sup>*</sup></label>
+                            <input type="text" class="form-control" id="cidadeInput" name="Endereco.Cidade" maxlength="12">
+                            <span class="error-message" id="cidadeError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Estado<sup>*</sup></label>
+                            <input type="text" class="form-control" id="estadoInput" name="Endereco.UF" maxlength="2">
+                            <span class="error-message" id="estadoError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-item">
+                            <label class="form-label my-3">Numero<sup>*</sup></label>
+                            <input type="number" class="form-control" id="numeroInput" name="Endereco.Numero" maxlength="5">
+                            <span class="error-message" id="numeroError"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-sm-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Complemento<sup>*</sup></label>
+                            <input type="text" class="form-control" id="complementoInput" name="Endereco.Complemento" maxlength="25">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-item">
+                            <label class="form-label my-3">Condições da Via<sup>*</sup></label>
+                            <select class="form-label select2" id="basic-usage" style="width:100%"  name="Endereco.Observacoes" multiple="multiple">
+                                @foreach (var item in condicoesVia.ToList())
+                                {
+                                    <option value="@item.Id">@item.Nome</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <input type="text" class="form-control d-none" id="latInput" name="Endereco.latitude" />
+                    <input type="text" class="form-control d-none" id="lonInput" name="Endereco.longitude" />
+
+                    <div class="col-12 mt-3 d-none" id="confirmMap">
+                        <h5>Confirme o Endereço abaixo no mapa com um duplo clique no mapa ou no circulo no lado direto para pegar sua localização exata</h5>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="d-none" id="mapaEndereco" style="width:600px;height:400px;"></div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-12">
+                    <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary" type="button" data-toggle="modal" data-target="#termoModal" >Cadastrar</button>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="termoModal" tabindex="-1" role="dialog" aria-labelledby="termoModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="termoModalTitle">Termos de Uso</h5>
+                        </div>
+                        <div class="modal-body">
+                            Termos de Serviço Alfatec
+                            DATA DA ÚLTIMA REVISÃO: 01 de Maio de 2024
+                            
+                            IMPORTANTE, LEIA ATENCIOSAMENTE ESTES TERMOS DE USO ONLINE.
+                            
+                            Seja bem-vindo(a) à Alfatec alfatec.com.br. A Alfatec (doravante referida como "Alfatec", "nós", "nos" ou "nossa") fornece uma plataforma para comunicar e unir produtores e mercados(coletivamente, os "Serviços"), acessíveis em alfatec.com.br e em quaisquer outros sites através dos quais a Alfatec disponibiliza os Serviços (coletivamente, o "Site").
+                            
+                            O Site e os Serviços são oferecidos a você sob a condição de sua aceitação, sem modificação, dos termos, condições e avisos contidos neste documento (os "Termos"). O uso do Site e dos Serviços constitui sua concordância com todos esses Termos. Leia estes termos atentamente e guarde uma cópia deles para sua referência. Reservamo-nos o direito de atualizar ou modificar estes Termos a qualquer momento, sem aviso prévio, e seu uso contínuo do Site após a publicação de quaisquer alterações pela Alfatec constituirá sua aceitação de tais alterações ou modificações. Recomendamos que você revise estes Termos sempre que utilizar o Site.
+                            
+                            Você concorda em não:
+                            
+                            Modificar, publicar, transmitir, realizar engenharia reversa, participar da transferência ou venda, criar trabalhos derivados ou de qualquer forma explorar qualquer conteúdo, no todo ou em parte, encontrado no Site ou no Aplicativo;
+                            Utilizar rastreadores da web, robôs da web, rastreadores da web, formigas, indexadores automáticos, bots, worms e outros dispositivos similares em conexão com o Site; desde que, no entanto, mecanismos de pesquisa de uso geral da Internet e arquivos públicos não comerciais que usam ferramentas para coletar informações com o único propósito de exibir hiperlinks para o Site tenham uma exceção limitada da exclusão anterior, desde que o façam a partir de um endereço IP estável ou intervalo de endereços IP usando um agente facilmente identificável;
+                            Utilizar o Site de qualquer maneira que possa danificar, desabilitar, sobrecarregar ou prejudicar o Site ou interferir no uso do Site por qualquer outra parte;
+                            Obter ou tentar obter qualquer conteúdo por qualquer meio que não seja intencionalmente disponibilizado ou fornecido pelo Site;
+                            Remover, modificar, desabilitar, bloquear, ocultar ou de outra forma prejudicar qualquer publicidade relacionada ao Site;
+                            Coletar informações pessoalmente identificáveis de outros usuários ou visitantes;
+                            Coletar informações sobre usuários com a finalidade de enviar, ou facilitar ou encorajar o envio de comunicações em massa não solicitadas ou de outro tipo; ou
+                            Publicar ou transmitir quaisquer worms, vírus, cavalos de Tróia ou outros arquivos, códigos ou programas nocivos, perturbadores ou destrutivos para o Site.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="text-white btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="text-white btn btn-primary" >Salvar Cadastro</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.3/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.3/leaflet.js"></script>
+<script type='text/javascript' src="https://www.bing.com/api/maps/mapcontrol?key=@apiKey.ToString()"></script>
+<script src="https://www.bing.com/api/maps/mapcontrol?key=AjedK8kngLdYeCOh4BbODR0lbczvk5KL-y5DCRPYf-NmGkNgEhCstr2tlHd2m4mB"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+
+<script>
+    $('#basic-usage').select2({
+        theme: "bootstrap-5",
+        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+        placeholder: $(this).data('placeholder'),
+    });
+
+    function buscarDadosEmpresa() {
+        let cnpjInputValue = $("#cnpj").val()
+        $("#btnCNPJBef").addClass("d-none");
+        $("#btnCNPJAfter").removeClass("d-none");
+        cnpjInputValue = cnpjInputValue.replace(/\D/g, '');
+        fetch(`/api/cnpjs/${cnpjInputValue}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'ERROR') {
+                    toastr["error"]('CNPJ não encontrado ou inválido!');
+                    $("#btnCNPJBef").removeClass("d-none");
+                    $("#btnCNPJAfter").addClass("d-none");
+                    return;
+                }
+
+                $("#nomeEmpresa").val(data.nome);
+                $("#atividadePrincipal").val(data.atividade_principal[0].text);
+
+                $("#btnCNPJBef").removeClass("d-none");
+                $("#btnCNPJAfter").addClass("d-none");
+
+                let cepTratado = data.cep.replace(/\.$/, '');
+                cepTratado = cepTratado.replace(/\D/g, '');
+                $("#cepInput").val(cepTratado);
+                pesquisaByCEP()
+            })
+            .catch(error => {
+                console.error('Error fetching CNPJ data:', error);
+                $("#btnCNPJBef").removeClass("d-none");
+                $("#btnCNPJAfter").addClass("d-none");
+            });
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+        // event.preventDefault(); 
+
+        fetch('./RegisterPost', {
+            method: 'POST',
+            body: new FormData(this)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ocorreu um erro ao processar a requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    toastr["success"]('Usuario cadastrado com sucesso!');
+
+                    $('form input[type="text"], form input[type="password"], form textarea').val('');
+                    $('form select').val(null).trigger('change');
+                    $('.modal').modal('hide');
+                    $('#termoModal').attr('aria-hidden', 'true');
+
+                    $('.selected').removeClass('selected');
+                } else {
+                    toastr["erro"]('Erro ao cadastrar o usuarios!' + data.message);
+                }
+            })
+            .catch(error => {
+                toastr["erro"]('Erro ao cadastrar o usuarios!' + data.message);
+            });
+    });
+
+
+    function pesquisaByCEP() {
+        $("#searchAddressButton").addClass("d-none");
+        $("#searchAddressButtonAfter").removeClass("d-none");
+
+        let cepInput = $('#cepInput').val();
+        let logradouroInput = $('#logradouroInput').val();
+        let bairroInput = $('#bairroInput').val();
+        let cidadeInput = $('#cidadeInput').val();
+        let estadoInput = $('#estadoInput').val();
+
+        let cepError = $('#cepError').val();
+        let logradouroError = $('#logradouroError').val();
+        let bairroError = $('#bairroError').val();
+        let cidadeError = $('#cidadeError').val();
+        let estadoError = $('#estadoError').val();
+        let searchAddressButton = $('#searchAddressButton').val();
+
+        let cep = cepInput.trim();
+
+        if (cep == "") {
+            toastr["error"]("CEP Inválido");
+            $("#searchAddressButtonAfter").addClass("d-none");
+            $("#searchAddressButton").removeClass("d-none");
+            return false;
+        }
+
+        $('#logradouroInput').val('');
+        $('#bairroInput').val('');
+        $('#cidadeInput').val('');
+        $('#estadoInput').val('');
+
+        const url = `https://viacep.com.br/ws/${cep}/json/`;
+        let enderecoTexto = "";
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    cepError.textContent = "CEP não encontrado.";
+                    $("#searchAddressButtonAfter").addClass("d-none");
+                    $("#searchAddressButton").removeClass("d-none");
+                    return;
+                }
+
+                $('#logradouroInput').val(data.logradouro);
+                $('#bairroInput').val(data.bairro);
+                $('#cidadeInput').val(data.localidade);
+                $('#estadoInput').val(data.uf);
+
+                let numero = $('#numeroInput').val();
+                $("#confirmMap").removeClass("d-none");
+
+                $("#searchAddressButtonAfter").addClass("d-none");
+                $("#searchAddressButton").removeClass("d-none");
+
+                let enderecoTexto = `${numero}, ${data.logradouro},${data.bairro},${data.localidade}, ${data.uf}`;
+                geocodeAddress(enderecoTexto);
+            })
+            .catch(error => {
+                $("#searchAddressButtonAfter").addClass("d-none");
+                $("#searchAddressButton").removeClass("d-none");
+                console.error("Error fetching address data:", error);
+                cepError.textContent = "Erro ao buscar dados do CEP. Tente novamente mais tarde.";
+            });
+    }
+
+
+    function geocodeAddress(address) {
+        var bingMapsKey = "@Html.Raw(apiKey)";
+        var url = "https://dev.virtualearth.net/REST/v1/Locations";
+        var params = {
+            q: address,
+            key: bingMapsKey
+        };
+        $.ajax({
+            url: url,
+            data: params,
+            dataType: 'json',
+            success: function (data) {
+                if (data && data.resourceSets.length > 0 && data.resourceSets[0].resources.length > 0) {
+                    var latitude = data.resourceSets[0].resources[0].point.coordinates[0];
+                    var longitude = data.resourceSets[0].resources[0].point.coordinates[1];
+
+
+                    if (latitude !== "") {
+                        $("#latInput").val(latitude);
+                        $("#lonInput").val(longitude);
+                        GetMap(latitude, longitude);
+                    } else {
+                        console.log("Erro: Latitude vazia.");
+                    }
+                } else {
+                    console.log("Erro: Endereço não encontrado.");
+                }
+            }
+        });
+    }
+
+    function GetMap(Lat, Long) {
+        $("#mapaEndereco").removeClass("d-none");
+        map = new Microsoft.Maps.Map('#mapaEndereco', {
+            credentials: "@apiKey.ToString()",
+            center: new Microsoft.Maps.Location(Lat, Long),
+            zoom: 17
+        });
+        map.setView(new Microsoft.Maps.Location(Lat, Long), 15);
+
+        let marker;
+
+        Microsoft.Maps.Events.addHandler(map, 'click', function (e) {
+            const clickLat = e.location.latitude;
+            const clickLon = e.location.longitude;
+
+            if (!marker) {
+                marker = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(clickLat, clickLon), { draggable: false });
+                map.entities.push(marker);
+            } else {
+                marker.setLocation(new Microsoft.Maps.Location(clickLat, clickLon));
+                marker.setVisible(true);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#cepInput').on('input', function () {
+            var cep = $(this).val().replace(/\D/g, '');
+
+            if (cep.length > 5) {
+                cep = cep.replace(/^(\d{5})(\d{1})?/, '$1-$2');
+            }
+            $(this).val(cep);
+        });
+
+        $('#cepInput').on('blur', function () {
+            var cep = $(this).val().replace(/\D/g, '');
+            if (cep.length !== 8) {
+                if (cep !== "") {
+                    $("#searchAddressButtonAfter").addClass("d-none");
+                    $("#searchAddressButton").removeClass("d-none");
+                    toastr["error"]("O CEP deve ter 8 dígitos.");
+                    $(this).val('');
+                }
+            }
+        });
+
+        $('#cepInput').on('input', function () {
+            var cep = $(this).val().replace(/[^\d-]/g, '');
+            $(this).val(cep);
+        });
+    });
+
+    var selectedCard = null;
+
+    function selectCard(card) {
+        if (selectedCard !== null) {
+            selectedCard.classList.remove('selected');
+        }
+        selectedCard = card;
+        selectedCard.classList.add('selected');
+
+        var tipoUsuario = selectedCard.dataset.tipoUsuario;
+        console.log(tipoUsuario);
+        $("#tipoUser").val(tipoUsuario);
+    }
+
+
+
+</script>
+

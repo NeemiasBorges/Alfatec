@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Alfatec.Application
-build_property.ProjectDir = C:\Users\Neemias2\Desktop\PROJETOS\ALFATEC\Solution1\Alfatec.Application\
+build_property.ProjectDir = C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Application\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -8,33 +8,26 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
     {
         public void Configure(EntityTypeBuilder<ModoEnvio> builder)
         {
-            builder.HasKey(m => m.Id);
+            builder.HasKey(me => me.Id);
 
-            builder.Property(m => m.Id)
+            builder.Property(me => me.NomeTransportadora)
                 .IsRequired();
 
-            builder.Property(m => m.NomeTransportadora)
-                .IsRequired()
-                .HasMaxLength(50);
-
-            builder.Property(m => m.CNPJTransportadora)
-                .IsRequired()
-                .HasMaxLength(14);
-
-            builder.Property(m => m.IETransportadora)
-                .IsRequired()
-                .HasMaxLength(12);
-
-            builder.Property(m => m.CalculoPrevisaoEntrega)
+            builder.Property(me => me.CNPJTransportadora)
                 .IsRequired();
 
-            builder.Property(m => m.TipoEnvio)
+            builder.Property(me => me.IETransportadora)
                 .IsRequired();
 
-            builder.Property(m => m.TipoObjeto)
-                .HasDefaultValue(12) // Valor padrão é 12
+            builder.Property(me => me.CalculoPrevisaoEntrega)
+                .IsRequired();
+
+            builder.Property(me => me.TipoEnvio)
+                .IsRequired();
+
+            builder.Property(me => me.TipoObjeto)
+                .HasDefaultValue(12) 
                 .IsRequired();
         }
     }
-
 }

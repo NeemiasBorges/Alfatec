@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Alfatec.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca9ddc8dad2050c917574c4887d8e92102624a50")]
 [assembly: System.Reflection.AssemblyProductAttribute("Alfatec.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Alfatec.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

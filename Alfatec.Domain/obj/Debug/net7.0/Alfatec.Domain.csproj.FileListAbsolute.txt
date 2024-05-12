@@ -1,0 +1,12 @@
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\bin\Debug\net7.0\Alfatec.Domain.deps.json
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\bin\Debug\net7.0\Alfatec.Domain.dll
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\bin\Debug\net7.0\Alfatec.Domain.pdb
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.AssemblyInfoInputs.cache
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.AssemblyInfo.cs
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.sourcelink.json
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.dll
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\refint\Alfatec.Domain.dll
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\Alfatec.Domain.pdb
+C:\Users\ifspn\OneDrive\Desktop\ALFATEC\REPOSITORY\Alfatec\Alfatec.Domain\obj\Debug\net7.0\ref\Alfatec.Domain.dll

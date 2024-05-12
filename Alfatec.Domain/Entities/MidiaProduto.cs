@@ -2,6 +2,9 @@
 {
     public class MidiaProduto
     {
+        public MidiaProduto()
+        {
+        }
         public MidiaProduto(int id, int idproduto, string nome, string tipoArquivo, string diretorio)
         {
             Id = id;
@@ -14,9 +17,9 @@
         public int Id { get; private set; }
         public int IDproduto { get; private set; }
         public Produto Produto { get; private set; }
-       public string Nome  { get; private set; }
-       public string TipoArquivo { get; private set; }
-       public string Diretorio { get; private set; }
-       public int TipoObjeto { get; private set; } = 9;
+        public string Nome { get; private set; }
+        public string TipoArquivo { get; private set; }
+        public string Diretorio { get; private set; }
+        public int TipoObjeto { get; private set; } = 9;
     }
 }

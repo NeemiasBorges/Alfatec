@@ -10,61 +10,46 @@ namespace Alfatec.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Id)
-                .IsRequired();
-
             builder.Property(p => p.NomeProduto)
-                .IsRequired()
-                .HasMaxLength(50);
+                .IsRequired();
 
             builder.Property(p => p.DescricaoProduto)
-                .IsRequired()
-                .HasMaxLength(100);
+                .IsRequired();
 
             builder.Property(p => p.Status)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(1);
 
-            builder.Property(p => p.IDCategoria)
-                .IsRequired();
-
-            builder.HasOne(p => p.Categoria)
-                .WithMany()
-                .HasForeignKey(p => p.IDCategoria)
+            builder.Property(p => p.Categoria)
                 .IsRequired();
 
             builder.Property(p => p.UnidadeVenda)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(25);
 
-            builder.Property(p => p.IdMidiaProdutos)
+            builder.Property(p => p.IdFotos)
                 .IsRequired();
 
             builder.Property(p => p.Variacao);
 
-            builder.Property(p => p.Validade);
-
-            builder.Property(p => p.Classificacao)
-                .IsRequired();
-
             builder.Property(p => p.DataCriacao)
                 .IsRequired();
 
+            builder.Property(p => p.Validade);
+
+            builder.Property(p => p.Selos);
+
+            builder.Property(p => p.Classificacao);
+
+            builder.Property(p => p.Comentarios);
+
+            builder.Property(p => p.ComentariosAdicionais);
+
             builder.Property(p => p.TipoObjeto)
-                .HasDefaultValue(4) // Valor padrão é 4
+                .HasDefaultValue(4) 
                 .IsRequired();
 
-            builder.HasMany(p => p.Selos)
-                .WithMany()
-                .UsingEntity(j => j.ToTable("ProdutoSelos"));
-
-            builder.HasMany(p => p.Comentarios)
-                .WithOne(c => c.Produto)
-                .HasForeignKey(c => c.IdProduto);
-
-            builder.HasMany(p => p.MidiaProdutos)
-                .WithOne(mp => mp.Produto)
-                .HasForeignKey(mp => mp.IDproduto);
-
+            builder.Property(p => p.IdMidiaProduto);
         }
     }
-
 }
